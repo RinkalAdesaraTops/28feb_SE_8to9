@@ -1,0 +1,18 @@
+oops
+
+class-object
+class -- collection of data
+object - run time entity
+inheritance - parent-child concept
+types
+polymorphism - one name multiple form
+abstraction - data hiding
+encapsulation -- wrapping up of data into single unit
+constructor -- 
+destructor
+
+Friend -- keyword
+can access private member
+as a argument compulsory pass object
+friend func can call without object
+

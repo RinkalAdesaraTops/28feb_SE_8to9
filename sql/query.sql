@@ -44,3 +44,52 @@ SELECT *,MAX(salary) FROM `emp_tbl`;
 SELECT * from emp_tbl ORDER by salary desc
 //2nd highest salary
 SELECT * from emp_tbl ORDER by salary desc LIMIT 1,1;
+//Alias
+select * from 
+emp_tbl as e,
+emp_education_tbl as ed
+where e.emp_id = ed.emp_id
+
+select * from 
+emp_tbl as e
+left join emp_education_tbl as ed ON ed.emp_id = e.emp_id
+
+select * from 
+emp_tbl as e
+right join emp_education_tbl as ed ON ed.emp_id = e.emp_id
+
+select * from 
+emp_tbl as e
+join emp_education_tbl as ed ON ed.emp_id = e.emp_id
+
+select * from 
+emp_tbl as e
+join emp_education_tbl as ed ON ed.emp_id = e.emp_id
+where ed.year >=2005;
+grant - gave permission to user
+revoke - again get back permission from user
+commit & rollback
+
+groupby - having clause
+
+view
+create view emp_disp AS 
+SELECT name,salary FROM `emp_tbl` 
+
+select * from emp_disp
+drop view emp_disp
+
+trigger
+
+CREATE PROCEDURE GetCustomersByCountry
+    @Country VARCHAR(50),
+    @Name VARCHAR(100)
+AS
+BEGIN
+    SELECT CustomerName, ContactName
+    FROM Customers
+    WHERE Country = @Country OR CustomerName like @Name;
+END;
+
+EXEC GetCustomersByCountry @Country = 'India' 
+@Name = 'N%'
